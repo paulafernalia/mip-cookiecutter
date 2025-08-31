@@ -13,7 +13,7 @@ handlers:
     stream: ext://sys.stdout
 
 loggers:
-  orproject:
+  {{cookiecutter.package_name}}:
     level: INFO
     handlers: [console]
     propagate: False
