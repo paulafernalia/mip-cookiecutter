@@ -21,11 +21,15 @@ This template encourages good development practices:
 ├── LICENSE
 ├── Makefile
 ├── README.md
+├── .gitignore
 ├── conf
 │   ├── logging.yml
 │   └── parameters.yaml
 ├── data
 │   └── instance.json
+├── .github
+│   └── workflows
+│       └── ci-cd.yml    
 ├── notebooks
 ├── pyproject.toml
 ├── src
