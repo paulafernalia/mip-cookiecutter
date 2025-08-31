@@ -44,7 +44,9 @@ class ModelBuilder:
             A sequence of variable builder instances responsible for creating
             model variables (e.g., assignment variables).
         """
-        return [AssignmentVariable()]
+        return [
+            AssignmentVariable()
+        ]
 
     def _constraint_collection(self) -> Sequence[BaseConstraintBuilder]:
         """Return the collection of constraint builders for the problem.
@@ -56,7 +58,7 @@ class ModelBuilder:
             model constraints (e.g., capacity constraints).
         """
         return [
-            # KnapsackConstraint()
+            KnapsackConstraint()
         ]
 
     def _add_variables(self) -> None:

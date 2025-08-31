@@ -10,10 +10,10 @@ from {{cookiecutter.package_name}}.optimization.parameters import Parameters
 logger = logging.getLogger(__name__)
 
 
-class {{cookiecutter.problem_name}}Solver:
-    """Concrete solver for the knapsack problem using HiGHS.
+class Engine:
+    """Concrete solver for the problem using HiGHS.
 
-    This solver builds a knapsack model with `KnapsackModelBuilder` and
+    This solver builds a knapsack model with `ModelBuilder` and
     provides methods to set parameters, solve the model, and extract the solution.
     """
 
@@ -22,7 +22,7 @@ class {{cookiecutter.problem_name}}Solver:
 
         Parameters
         ----------
-        data : KnapsackData
+        data : ModelData
             The problem data (items, capacities, etc.) required to build the model.
 
         """
@@ -72,7 +72,7 @@ class {{cookiecutter.problem_name}}Solver:
                 total_weight += item.weight
                 total_value += item.value
 
-        return KnapsackSolution(
+        return Solution(
             items=selected_items,
             weight=total_weight,
             value=total_value,
