@@ -23,7 +23,7 @@ class Engine:
         Parameters
         ----------
         data : ModelData
-            The problem data (items, capacities, etc.) required to build the model.
+            The problem data required to build the model.
 
         """
         self.data: ModelData = data
@@ -110,7 +110,6 @@ class Engine:
         ------
         ValueError
             If `file_name` does not end with `.lp` or `.mps`.
-        self.model.writeModel(file_name)
         """
         if not (file_name.endswith(".lp") or file_name.endswith(".mps")):
             raise ValueError("file_name must end with '.lp' or '.mps'")

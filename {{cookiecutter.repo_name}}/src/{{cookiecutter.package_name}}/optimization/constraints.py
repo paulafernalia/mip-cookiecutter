@@ -41,11 +41,11 @@ class BaseConstraintBuilder(ABC):
 
         Parameters
         ----------
-        model : ModelT
-            The solver-specific model object.
-        data : DataT
+        model : Highs
+            The Highs model object.
+        data : ModelData
             Problem-specific input data.
-        **variables : Dict[str, Dict[Tuple[int, ...], highs_var]]
+        variables : Dict[str, VariableDict]
             Arbitrary number of variable sets, keyed by variable set name.
             Each value is a dict mapping index tuples to solver variables.
         """
