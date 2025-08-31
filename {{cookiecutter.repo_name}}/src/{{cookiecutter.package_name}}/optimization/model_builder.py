@@ -4,11 +4,9 @@ from typing import Dict, Sequence, Tuple
 from highspy import Highs
 
 from {{cookiecutter.package_name}}.data.models import ModelData
-from {{cookiecutter.package_name}}.optimization.base.constraints import BaseConstraintBuilder
-from {{cookiecutter.package_name}}.optimization.base.types import VariableDict
-from {{cookiecutter.package_name}}.optimization.base.variables import BaseVariableBuilder
-# from {{cookiecutter.package_name}}.optimization.constraints.knapsack_constraints import KnapsackConstraint
-# from {{cookiecutter.package_name}}.optimization.variables.assignment_variables import AssignmentVariable
+from {{cookiecutter.package_name}}.optimization.constraints import BaseConstraintBuilder, KnapsackConstraint
+from {{cookiecutter.package_name}}.optimization.types import VariableDict
+from {{cookiecutter.package_name}}.optimization.variables import BaseVariableBuilder, AssignmentVariable
 
 logger = logging.getLogger(__name__)
 

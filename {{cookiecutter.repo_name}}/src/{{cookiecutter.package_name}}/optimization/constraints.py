@@ -12,7 +12,7 @@ from typing import Dict, Optional
 from highspy import Highs
 
 from {{cookiecutter.package_name}}.data.models import ModelData
-from {{cookiecutter.package_name}}.optimization.base.types import Indices, VariableDict
+from {{cookiecutter.package_name}}.optimization.types import Indices, VariableDict
 
 
 class BaseConstraintBuilder(ABC):
@@ -82,7 +82,7 @@ class KnapsackConstraint(BaseConstraintBuilder):
     def add(
         self,
         model: Highs,
-        data: KnapsackData,
+        data: ModelData,
         variables: Dict[str, VariableDict],
     ) -> None:
         """

@@ -24,7 +24,7 @@ from abc import ABC, abstractmethod
 from highspy import Highs
 
 from {{cookiecutter.package_name}}.data.models import ModelData
-from {{cookiecutter.package_name}}.optimization.base.types import Indices, VariableDict
+from {{cookiecutter.package_name}}.optimization.types import Indices, VariableDict
 
 
 class BaseVariableBuilder(ABC):
@@ -86,7 +86,7 @@ class AssignmentVariable(BaseVariableBuilder):
     def __init__(self) -> None:
         super().__init__(name="assignment")
 
-    def add(self, model: Highs, data: KnapsackData) -> VariableDict:
+    def add(self, model: Highs, data: ModelData) -> VariableDict:
         """
         Add binary variables x[i] for each knapsack item.
 
