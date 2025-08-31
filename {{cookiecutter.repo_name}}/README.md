@@ -4,16 +4,13 @@
 
 This project was generated using [mip-cookiecutter](https://github.com/your-username/mip-cookiecutter).
 
-This template encourages good development practices:
-
-- **Unit tests**: The `tests/` folder provides a starting point for testing your MIP models and code.
-- **Pre-commit checks**: A pre-commit configuration ensures your code passes:
-    - [mypy](https://github.com/python/mypy) (type checking)
-    - [bandit](https://github.com/PyCQA/bandit) (security checks)
-    - [ruff](https://github.com/astral-sh/ruff) (linting)
-    - [complexipy](https://github.com/rohaquinlop/complexipy) (complexity analysis)
-    - [pip-audit](https://github.com/pypa/pip-audit) (vulnerabilities in dependencies)
-- **Continuous Integration**: A GitHub action runs tests, typechecking, checks the package for vulnerabilities and detects formatting issues in the code.
+This template encourages good development practices through some tools executed in pre-commit hooks and/or GitHub actions:
+- [pytest](https://github.com/pytest-dev/pytest) (unit tests and coverage checks)
+- [mypy](https://github.com/python/mypy) (type checking)
+- [bandit](https://github.com/PyCQA/bandit) (security checks)
+- [ruff](https://github.com/astral-sh/ruff) (linting)
+- [complexipy](https://github.com/rohaquinlop/complexipy) (complexity analysis)
+- [pip-audit](https://github.com/pypa/pip-audit) (vulnerabilities in dependencies)
 
 ## Project structure
 
