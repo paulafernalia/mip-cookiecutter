@@ -19,7 +19,7 @@ def load_data_from_json(path: Union[str, Path]) -> ModelData:
 def load_parameters_from_yaml(file_path: str) -> Parameters:
     """Load knapsack solver parameters from a YAML configuration file.
 
-    The YAML file should contain keys corresponding to KnapsackParameters:
+    The YAML file should contain keys corresponding to Parameters:
 
     - time_limit: Maximum solver runtime in seconds (int)
     - mip_rel_gap: Relative gap tolerance for MIP solver (float)
@@ -32,7 +32,7 @@ def load_parameters_from_yaml(file_path: str) -> Parameters:
 
     Returns
     -------
-    KnapsackParameters
+    Parameters
         A Pydantic model instance containing the solver parameters.
 
     Raises

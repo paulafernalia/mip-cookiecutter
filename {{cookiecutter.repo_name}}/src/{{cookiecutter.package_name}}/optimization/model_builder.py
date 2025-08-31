@@ -17,6 +17,15 @@ class ModelBuilder:
     This class encapsulates the creation of decision variables, constraints,
     and the objective function for the knapsack problem. It provides a
     structured pipeline to transform input data into a HiGHS model instance.
+
+    Attributes
+    ----------
+    data : ModelData
+        The knapsack problem data containing item information and capacity.
+    model : Highs
+        The HiGHS model instance being constructed.
+    variables : Dict[str, VariableDict]
+        Dictionary holding the decision variables for the model.
     """
 
     def __init__(self, data: ModelData) -> None:
@@ -24,14 +33,14 @@ class ModelBuilder:
 
         Parameters
         ----------
-        data : KnapsackData
+        data : ModelData
             The knapsack problem data containing item information and capacity.
         """
         self.data: ModelData = data
         self.model: Highs = Highs()
         self.variables: Dict[str, VariableDict] = {}
 
-        logger.info(f"Initialized KnapsackModelBuilder with ${len(data.items)} items.")
+        logger.info(f"Initialized ModelBuilder with ${len(data.items)} items.")
 
     def _variable_collection(self) -> Sequence[BaseVariableBuilder]:
         """Return the collection of variable builders for the problem.
@@ -115,10 +124,10 @@ class ModelBuilder:
             - Highs: The fully constructed HiGHS model instance.
             - VariableDict: Dictionary of model variables keyed by builder name.
         """
-        logger.info("Starting to build the knapsack optimization model...")
+        logger.info("Starting to build the optimization model...")
         self._add_variables()
         self._add_constraints()
         self._add_objective()
-        logger.info("Knapsack optimization model successfully built.")
+        logger.info("Optimization model successfully built.")
 
         return self.model, self.variables
