@@ -1,0 +1,3 @@
+time_limit: 60
+mip_rel_gap: 0.001
+verbose: true

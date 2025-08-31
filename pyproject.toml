@@ -1,0 +1,9 @@
+[project]
+name = "mip-cookieutter"
+version = "0.1.0"
+description = "Cookiecutter template for mip projects"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cookiecutter>=2.6.0",
+]

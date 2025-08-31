@@ -1,0 +1,40 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0
+  hooks:
+    - id: trailing-whitespace
+      exclude: .gitignore
+    - id: check-yaml # Checks yaml files for parseable syntax.
+    - id: check-added-large-files # Checks for large files added to the repository.
+    - id: check-case-conflict # Check for files that would conflict in case-insensitive filesystems
+    - id: check-merge-conflict # Check for files that contain merge conflict strings.
+- repo: https://github.com/astral-sh/uv-pre-commit
+  # uv version.
+  rev: 0.8.13
+  hooks:
+    - id: uv-lock
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+  rev: v0.12.10
+  hooks:
+    # Run the linter.
+    - id: ruff-check
+      args: ["--select", "D", "--select", "E", "--select", "F", "--ignore", "D100"]
+- repo: https://github.com/rohaquinlop/complexipy-pre-commit
+  rev: v3.3.0
+  hooks:
+    # Run the cognitive complexity checker.
+    - id: complexipy
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.17.1
+  hooks:
+    - id: mypy
+      pass_filenames: false
+      additional_dependencies: [pydantic, types-PyYAML]
+      args: [--check-untyped-defs, --strict]
+      entry: mypy src/
+- repo: https://github.com/PyCQA/bandit
+  rev: 1.8.6
+  hooks:
+    - id: bandit
+      args: ["-ll"]
