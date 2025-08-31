@@ -14,7 +14,7 @@ dev = [
     "bandit>=1.8.6",
     "complexipy>=4.0.2",
     "mypy>=1.17.1",
-    "{{cookiecutter.package_name}}",
+    "{{cookiecutter.repo_name}}",
     "pre-commit>=4.3.0",
     "pydantic>=2.11.7",
     "pytest>=8.4.1",
@@ -45,4 +45,4 @@ module = "highspy.*"
 ignore_missing_imports = true
 
 [tool.uv.sources]
-or-project-template = { workspace = true }
+{{cookiecutter.repo_name}} = { workspace = true }
