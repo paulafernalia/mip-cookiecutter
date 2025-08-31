@@ -1,19 +1,34 @@
-"""Defines schema of data model used in the problem."""
-
 from typing import List
 
 from pydantic import BaseModel, NonNegativeInt, PositiveInt
 
 
 class Item(BaseModel):
-    """Data model of an item of the knapsack problem."""
+    """
+    Data model representing an item in the knapsack problem.
+
+    Attributes:
+        weight (PositiveInt): Weight of the item. Must be a positive integer.
+        value (NonNegativeInt): Value of the item. Must be a non-negative integer.
+    """
 
     weight: PositiveInt
     value: NonNegativeInt
 
 
 class ModelData(BaseModel):
-    """Problem data model."""
+    """
+    Data model for a knapsack problem instance.
+
+    Attributes:
+        capacity (PositiveInt): Maximum weight capacity of the knapsack.
+        items (List[Item]): List of items available to include in the knapsack.
+
+    Properties:
+        n (int): Number of items in the list.
+        weights (List[NonNegativeInt]): List of weights of all items.
+        values (List[PositiveInt]): List of values of all items.
+    """
 
     capacity: PositiveInt
     items: List[Item]
@@ -35,7 +50,14 @@ class ModelData(BaseModel):
 
 
 class Solution(BaseModel):
-    """Solution to the knapsack problem."""
+    """
+    Represents a solution to the knapsack problem.
+
+    Attributes:
+        items (List[Item]): List of items included in the solution.
+        weight (NonNegativeInt): Total weight of the selected items.
+        value (NonNegativeInt): Total value of the selected items.
+    """
 
     items: List[Item]
     weight: NonNegativeInt

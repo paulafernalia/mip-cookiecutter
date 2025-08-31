@@ -15,11 +15,6 @@ def main() -> None:
 
     This function serves as the entry point when the package is run
     directly.
-
-    Returns
-    -------
-    None
-        This function does not return anything.
     """
     data = load_data_from_json("data/instance.json")
     params = load_parameters_from_yaml("conf/parameters.yaml")
