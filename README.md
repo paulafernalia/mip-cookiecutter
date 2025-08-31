@@ -5,8 +5,6 @@ This template provides a quick way to set up optimization problem repositories w
 
 ## Template structure
 
-## Project structure
-
 ```text
 .
 ├── LICENSE
