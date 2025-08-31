@@ -49,3 +49,7 @@ jobs:
       # 9. Run Complexipy (complexity check)
       - name: Run Complexipy
         run: uv run complexipy src
+
+      # 10. Run pip-audit
+      - name: Run pip-audit
+        run: uv run pip-audit

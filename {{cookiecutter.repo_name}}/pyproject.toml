@@ -21,6 +21,7 @@ dev = [
     "pytest-cov>=6.2.1",
     "ruff>=0.12.10",
     "types-pyyaml>=6.0.12.20250822",
+    "pip-audit>=2.9.0",
 ]
 
 [tool.ruff.format]
