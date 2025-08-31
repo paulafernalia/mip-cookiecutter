@@ -92,4 +92,4 @@ make ruff
 To install and run hooks:
 ```
 make hooks
-``
+```
