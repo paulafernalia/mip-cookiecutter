@@ -1,6 +1,5 @@
 {
-    "project_name": "knapsack_mip_solver",
-    "repo_name": "Knapsack Problem",
+    "repo_name": "knapsack-mip-solver",
+    "project_name": "Knapsack Problem",
     "package_name": "knapsack",
-    "problem_name": "Knapsack"
 }
