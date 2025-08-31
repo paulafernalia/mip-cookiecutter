@@ -1,1 +1,2 @@
 # mip-cookiecutter
+Hello!
