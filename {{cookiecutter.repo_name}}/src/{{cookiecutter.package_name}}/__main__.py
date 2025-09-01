@@ -20,14 +20,14 @@ def main() -> None:
     This function serves as the entry point when the package is run
     directly.
     """
-    # data = load_data_from_json("data/instance.json")
-    # params = load_parameters_from_yaml("conf/parameters.yaml")
+    data = load_data_from_json("data/instance.json")
+    params = load_parameters_from_yaml("conf/parameters.yaml")
 
-    # solver = Engine(data)
-    # solver.set_parameters(params)
+    solver = Engine(data)
+    solver.set_parameters(params)
 
-    # solver.run()
-    # solver.build_solution()
+    solver.run()
+    solver.build_solution()
 
 
 if __name__ == "__main__":

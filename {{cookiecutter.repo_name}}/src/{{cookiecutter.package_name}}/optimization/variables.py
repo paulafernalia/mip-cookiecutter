@@ -1,24 +1,3 @@
-"""
-Base interface for defining decision variables in optimization models.
-
-This module provides an abstract base class ``BaseVariable`` that follows the
-Composite pattern for adding variables to solver models. Subclasses should
-implement the ``add`` method to define specific decision variables based on
-the provided problem data.
-
-Examples
---------
-A binary variable for item selection in a knapsack problem can be implemented
-as a subclass of ``BaseVariable``:
-
-    class ItemSelectionVariable(BaseVariable[KnapsackData, highspy.Highs]):
-        def add(self, model: highspy.Highs, data: KnapsackData) -> None:
-            # Add binary variables x[i] for each item i
-            for i in range(len(data.items)):
-                model.addVar(lb=0, ub=1, vtype="B", name=f"x_{i}")
-
-"""
-
 from abc import ABC, abstractmethod
 
 from highspy import Highs
@@ -79,37 +58,4 @@ class BaseVariableBuilder(ABC):
         index_str = "_".join(map(str, index))
         return f"{self.name}_{index_str}"
 
-# TODO
-
-# class AssignmentVariable(BaseVariableBuilder):
-#     """Create binary variables for knapsack items."""
-
-#     def __init__(self) -> None:
-#         super().__init__(name="assignment")
-
-#     def add(self, model: Highs, data: ModelData) -> VariableDict:
-#         """
-#         Add binary variables x[i] for each knapsack item.
-
-#         Parameters
-#         ----------
-#         model : highspy.Highs
-#             The HiGHS model to which variables are added.
-#         data : KnapsackData
-#             Knapsack problem data (weights, values, capacity).
-
-#         Returns
-#         -------
-#         Dict[Tuple[int, ...], int]
-#             Dictionary mapping (i,) -> column index in HiGHS model.
-#         """
-#         x_vars: VariableDict = {}
-
-#         for i, value in enumerate(data.values):
-#             # Add a binary variable with objective coefficient = item value
-#             x_vars[(i,)] = model.addBinary(
-#                 obj=-float(value),
-#                 name=self.varname((i,)),
-#             )
-
-#         return x_vars
+# TODO: Implement variables from BaseVariableBuilder

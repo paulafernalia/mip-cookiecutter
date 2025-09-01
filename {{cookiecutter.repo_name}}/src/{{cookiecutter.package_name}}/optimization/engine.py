@@ -3,7 +3,6 @@ from typing import List
 
 from highspy import HighsModelStatus
 
-# from {{cookiecutter.package_name}}.data.models import Item
 from {{cookiecutter.package_name}}.data.models import ModelData, Solution
 from {{cookiecutter.package_name}}.optimization.model_builder import ModelBuilder
 from {{cookiecutter.package_name}}.optimization.parameters import Parameters
@@ -14,12 +13,12 @@ logger = logging.getLogger(__name__)
 class Engine:
     """Concrete solver for the problem using HiGHS.
 
-    This solver builds a knapsack model with `ModelBuilder` and
+    This solver builds a model with `ModelBuilder` and
     provides methods to set parameters, solve the model, and extract the solution.
     """
 
     def __init__(self, data: ModelData) -> None:
-        """Initialise instance of knapsack solver.
+        """Initialise instance of engine.
 
         Parameters
         ----------
@@ -42,7 +41,7 @@ class Engine:
         return self.model.getModelStatus() == HighsModelStatus.kOptimal  # type: ignore
 
     def run(self) -> None:
-        """Solve the knapsack optimization model."""
+        """Solve the optimization model."""
         self.model.run()
 
     def build_solution(self) -> Solution | None:
@@ -51,35 +50,14 @@ class Engine:
         Returns
         -------
         Solution or None
-            The solution of the knapsack problem, or None if not implemented yet.
+            The solution of the problem, or None if not implemented yet.
         """
         if not self.optimal:
             logger.error("Cannot build solution, model is not optimal.")
             return None
 
         logger.info("Building solution...")
-        # TODO
-
-        # assignment = self.variables["assignment"]
-
-        # selected_items: List[Item] = []
-        # total_weight = 0
-        # total_value = 0
-
-        # for indices, var in assignment.items():
-        #     value: float = self.model.vals(var)
-        #     if value > 0.5:
-        #         item = self.data.items[indices[0]]
-
-        #         selected_items.append(item)
-        #         total_weight += item.weight
-        #         total_value += item.value
-
-        # return Solution(
-        #     items=selected_items,
-        #     weight=total_weight,
-        #     value=total_value,
-        # )
+        # TODO: Implement method to build solution
 
     def set_parameters(self, params: Parameters) -> None:
         """Set solver parameters for HiGHS.
