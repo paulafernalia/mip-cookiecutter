@@ -10,6 +10,9 @@ from {{cookiecutter.package_name}}.utils.io import load_data_from_json, load_par
 
 # TODO
 
+print("Print something")
+
+
 def main() -> None:
     """
     Run package directly.

@@ -13,3 +13,9 @@ test:
 hooks:
 	uv run pre-commit install
 	uv run pre-commit run --all-files
+
+check-template:
+	uv run cruft check
+
+update-template:
+	uv run cruft update
