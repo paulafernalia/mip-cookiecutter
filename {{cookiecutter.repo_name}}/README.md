@@ -78,6 +78,7 @@ To run the flow in `{{cookiecutter.package_name}}/__main__.py`:
 make run
 ```
 
+## Development workflows
 
 Run tests with:
 ```
@@ -93,3 +94,12 @@ To install and run hooks:
 ```
 make hooks
 ```
+
+To make sure the repo is up to date with the latest changes in the cookiecutter template:
+
+```
+make check-template
+make update-template
+```
+
+
