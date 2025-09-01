@@ -5,25 +5,23 @@ from highspy import Highs
 
 from {{cookiecutter.package_name}}.data.models import ModelData
 from {{cookiecutter.package_name}}.optimization.constraints import BaseConstraintBuilder
-# from {{cookiecutter.package_name}}.optimization.constraints import KnapsackConstraint
 from {{cookiecutter.package_name}}.optimization.types import VariableDict
 from {{cookiecutter.package_name}}.optimization.variables import BaseVariableBuilder
-# from {{cookiecutter.package_name}}.optimization.variables import AssignmentVariable
 
 logger = logging.getLogger(__name__)
 
 
 class ModelBuilder:
-    """Builder for the knapsack optimization model using HiGHS.
+    """Builder for the optimization model using HiGHS.
 
     This class encapsulates the creation of decision variables, constraints,
-    and the objective function for the knapsack problem. It provides a
+    and the objective function for the problem. It provides a
     structured pipeline to transform input data into a HiGHS model instance.
 
     Attributes
     ----------
     data : ModelData
-        The knapsack problem data containing item information and capacity.
+        The problem data in a Pydantic model.
     model : Highs
         The HiGHS model instance being constructed.
     variables : Dict[str, VariableDict]
@@ -36,7 +34,7 @@ class ModelBuilder:
         Parameters
         ----------
         data : ModelData
-            The knapsack problem data containing item information and capacity.
+            The problem data containing.
         """
         self.data: ModelData = data
         self.model: Highs = Highs()
@@ -51,12 +49,12 @@ class ModelBuilder:
         -------
         Sequence[BaseVariableBuilder]
             A sequence of variable builder instances responsible for creating
-            model variables (e.g., assignment variables).
+            model variables
         """
         # TODO
 
         return [
-            # AssignmentVariable()
+            # TODO: add variable builders
         ]
 
     def _constraint_collection(self) -> Sequence[BaseConstraintBuilder]:
@@ -66,12 +64,12 @@ class ModelBuilder:
         -------
         Sequence[BaseConstraintBuilder]
             A sequence of constraint builder instances responsible for creating
-            model constraints (e.g., capacity constraints).
+            model constraints
         """
         # TODO
 
         return [
-            # KnapsackConstraint()
+            # TODO: add constraint builders
         ]
 
     def _add_variables(self) -> None:
@@ -108,15 +106,14 @@ class ModelBuilder:
 
         Notes
         -----
-        This method must be implemented to define the objective
-        (e.g., maximize total value in the knapsack).
+        This method must be implemented to define the objective.
         """
         # TODO: implement objective definition here or remove this function
         # logger.info("Defining the objective function...")
         pass
 
     def build(self) -> Tuple[Highs, Dict[str, VariableDict]]:
-        """Build the complete knapsack optimization model.
+        """Build the complete optimization model.
 
         This method orchestrates the construction of the model by:
         1. Adding variables
