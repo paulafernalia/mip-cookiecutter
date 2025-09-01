@@ -5,12 +5,12 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "cookiecutter>=2.6.0",
     "highspy>=1.11.0",
 ]
 
 [dependency-groups]
 dev = [
+    "cruft>=2.16.0",
     "bandit>=1.8.6",
     "complexipy>=4.0.2",
     "mypy>=1.17.1",

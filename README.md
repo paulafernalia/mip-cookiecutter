@@ -42,19 +42,19 @@ This template provides a quick way to set up optimization problem repositories w
 ## Requirements
 
 - Python **3.13+**
-- [cookiecutter](https://pypi.org/project/cookiecutter/) `>=2.6.0`
+- [cruft](https://pypi.org/project/cruft/) `>=2.16.0`
 
 ## Usage
 
 Install dependencies with:
 
 ```bash
-pip install cookiecutter>=2.6.0
+pip install cruft
 ```
 
 Generate a new MIP project from this template
 ```
-cookiecutter https://github.com/paulafernalia/mip-cookiecutter.git
+cruft create https://github.com/paulafernalia/mip-cookiecutter.git
 ```
 
 You will be prompted for values defined in `cookiecutter.json`:
@@ -65,4 +65,14 @@ You will be prompted for values defined in `cookiecutter.json`:
     "project_name": "Knapsack Problem",
     "package_name": "knapsack",
 }
+```
+
+That will create an empty project using this template. This new project will not have a repo associated with it. You can create it with:
+
+```
+git init -b main
+git add .
+git commit -m "Initial commit from cruft template"
+git remote add origin git@github.com:<username>/<repo>.git
+git push -u origin main
 ```
