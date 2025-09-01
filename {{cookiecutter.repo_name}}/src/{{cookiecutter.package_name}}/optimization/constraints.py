@@ -72,6 +72,7 @@ class BaseConstraintBuilder(ABC):
         return f"{self.name}_{index_str}"
 
 
+# TODO
 
 # class KnapsackConstraint(BaseConstraintBuilder):
 #     """Knapsack capacity constraint."""

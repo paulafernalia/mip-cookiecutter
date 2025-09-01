@@ -79,6 +79,7 @@ class BaseVariableBuilder(ABC):
         index_str = "_".join(map(str, index))
         return f"{self.name}_{index_str}"
 
+# TODO
 
 # class AssignmentVariable(BaseVariableBuilder):
 #     """Create binary variables for knapsack items."""

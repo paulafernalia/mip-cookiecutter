@@ -58,6 +58,8 @@ class Engine:
             return None
 
         logger.info("Building solution...")
+        # TODO
+
         # assignment = self.variables["assignment"]
 
         # selected_items: List[Item] = []

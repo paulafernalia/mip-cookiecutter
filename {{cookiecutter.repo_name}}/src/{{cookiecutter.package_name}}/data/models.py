@@ -1,5 +1,10 @@
+# from typing import List
+
 from pydantic import BaseModel
 
+# from pydantic import NonNegativeInt, PositiveInt
+
+# TODO
 # class Item(BaseModel):
 #     """
 #     Data model representing an item in the knapsack problem.
@@ -27,6 +32,7 @@ class ModelData(BaseModel):
         values (List[PositiveInt]): List of values of all items.
     """
 
+    # TODO
     pass
 
     # capacity: PositiveInt
@@ -57,6 +63,8 @@ class Solution(BaseModel):
         weight (NonNegativeInt): Total weight of the selected items.
         value (NonNegativeInt): Total value of the selected items.
     """
+
+    # TODO
 
     # items: List[Item]
     # weight: NonNegativeInt

@@ -53,6 +53,8 @@ class ModelBuilder:
             A sequence of variable builder instances responsible for creating
             model variables (e.g., assignment variables).
         """
+        # TODO
+
         return [
             # AssignmentVariable()
         ]
@@ -66,6 +68,8 @@ class ModelBuilder:
             A sequence of constraint builder instances responsible for creating
             model constraints (e.g., capacity constraints).
         """
+        # TODO
+
         return [
             # KnapsackConstraint()
         ]
