@@ -7,6 +7,7 @@ import yaml
 from {{cookiecutter.package_name}}.data.models import ModelData
 from {{cookiecutter.package_name}}.optimization.parameters import Parameters
 
+# TODO
 
 # def load_data_from_json(path: Union[str, Path]) -> ModelData:
 #     """Load data from json and validate it."""
