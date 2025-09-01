@@ -1,19 +1,16 @@
-from typing import List
+from pydantic import BaseModel
 
-from pydantic import BaseModel, NonNegativeInt, PositiveInt
+# class Item(BaseModel):
+#     """
+#     Data model representing an item in the knapsack problem.
 
+#     Attributes:
+#         weight (PositiveInt): Weight of the item. Must be a positive integer.
+#         value (NonNegativeInt): Value of the item. Must be a non-negative integer.
+#     """
 
-class Item(BaseModel):
-    """
-    Data model representing an item in the knapsack problem.
-
-    Attributes:
-        weight (PositiveInt): Weight of the item. Must be a positive integer.
-        value (NonNegativeInt): Value of the item. Must be a non-negative integer.
-    """
-
-    weight: PositiveInt
-    value: NonNegativeInt
+#     weight: PositiveInt
+#     value: NonNegativeInt
 
 
 class ModelData(BaseModel):
@@ -30,23 +27,25 @@ class ModelData(BaseModel):
         values (List[PositiveInt]): List of values of all items.
     """
 
-    capacity: PositiveInt
-    items: List[Item]
+    pass
 
-    @property
-    def n(self) -> int:
-        """Return number of items."""
-        return len(self.items)
+    # capacity: PositiveInt
+    # items: List[Item]
 
-    @property
-    def weights(self) -> List[NonNegativeInt]:
-        """Return array of weights."""
-        return [item.weight for item in self.items]
+    # @property
+    # def n(self) -> int:
+    #     """Return number of items."""
+    #     return len(self.items)
 
-    @property
-    def values(self) -> List[PositiveInt]:
-        """Return array of weights."""
-        return [item.value for item in self.items]
+    # @property
+    # def weights(self) -> List[NonNegativeInt]:
+    #     """Return array of weights."""
+    #     return [item.weight for item in self.items]
+
+    # @property
+    # def values(self) -> List[PositiveInt]:
+    #     """Return array of weights."""
+    #     return [item.value for item in self.items]
 
 
 class Solution(BaseModel):
@@ -59,6 +58,7 @@ class Solution(BaseModel):
         value (NonNegativeInt): Total value of the selected items.
     """
 
-    items: List[Item]
-    weight: NonNegativeInt
-    value: NonNegativeInt
+    # items: List[Item]
+    # weight: NonNegativeInt
+    # value: NonNegativeInt
+    pass

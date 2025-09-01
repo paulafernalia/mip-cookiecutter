@@ -73,38 +73,38 @@ class BaseConstraintBuilder(ABC):
 
 
 
-class KnapsackConstraint(BaseConstraintBuilder):
-    """Knapsack capacity constraint."""
+# class KnapsackConstraint(BaseConstraintBuilder):
+#     """Knapsack capacity constraint."""
 
-    def __init__(self) -> None:
-        super().__init__(name="knapsack")
+#     def __init__(self) -> None:
+#         super().__init__(name="knapsack")
 
-    def add(
-        self,
-        model: Highs,
-        data: ModelData,
-        variables: Dict[str, VariableDict],
-    ) -> None:
-        """
-        Add the knapsack capacity constraint.
+#     def add(
+#         self,
+#         model: Highs,
+#         data: ModelData,
+#         variables: Dict[str, VariableDict],
+#     ) -> None:
+#         """
+#         Add the knapsack capacity constraint.
 
-        sum(weights[i] * x[i]) <= capacity.
+#         sum(weights[i] * x[i]) <= capacity.
 
-        Parameters
-        ----------
-        model : Highs
-            The solver model to which the constraint is added.
-        data : KnapsackData
-            Problem input data.
-        variables : Dict[str, Dict[Tuple[int, ...], highs_var]]
-            Variable sets created by BaseVariable.add, keyed by name.
-        """
-        assignment = variables["assignment"]
+#         Parameters
+#         ----------
+#         model : Highs
+#             The solver model to which the constraint is added.
+#         data : KnapsackData
+#             Problem input data.
+#         variables : Dict[str, Dict[Tuple[int, ...], highs_var]]
+#             Variable sets created by BaseVariable.add, keyed by name.
+#         """
+#         assignment = variables["assignment"]
 
-        model.addConstr(
-            expr=model.qsum(
-                item.weight * assignment[(i,)] for i, item in enumerate(data.items)
-            )
-            <= data.capacity,
-            name=self.constrname(),
-        )
+#         model.addConstr(
+#             expr=model.qsum(
+#                 item.weight * assignment[(i,)] for i, item in enumerate(data.items)
+#             )
+#             <= data.capacity,
+#             name=self.constrname(),
+#         )

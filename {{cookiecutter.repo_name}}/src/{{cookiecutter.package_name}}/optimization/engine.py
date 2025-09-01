@@ -3,7 +3,8 @@ from typing import List
 
 from highspy import HighsModelStatus
 
-from {{cookiecutter.package_name}}.data.models import Item, ModelData, Solution
+# from {{cookiecutter.package_name}}.data.models import Item
+from {{cookiecutter.package_name}}.data.models import ModelData, Solution
 from {{cookiecutter.package_name}}.optimization.model_builder import ModelBuilder
 from {{cookiecutter.package_name}}.optimization.parameters import Parameters
 
@@ -57,26 +58,26 @@ class Engine:
             return None
 
         logger.info("Building solution...")
-        assignment = self.variables["assignment"]
+        # assignment = self.variables["assignment"]
 
-        selected_items: List[Item] = []
-        total_weight = 0
-        total_value = 0
+        # selected_items: List[Item] = []
+        # total_weight = 0
+        # total_value = 0
 
-        for indices, var in assignment.items():
-            value: float = self.model.vals(var)
-            if value > 0.5:
-                item = self.data.items[indices[0]]
+        # for indices, var in assignment.items():
+        #     value: float = self.model.vals(var)
+        #     if value > 0.5:
+        #         item = self.data.items[indices[0]]
 
-                selected_items.append(item)
-                total_weight += item.weight
-                total_value += item.value
+        #         selected_items.append(item)
+        #         total_weight += item.weight
+        #         total_value += item.value
 
-        return Solution(
-            items=selected_items,
-            weight=total_weight,
-            value=total_value,
-        )
+        # return Solution(
+        #     items=selected_items,
+        #     weight=total_weight,
+        #     value=total_value,
+        # )
 
     def set_parameters(self, params: Parameters) -> None:
         """Set solver parameters for HiGHS.
