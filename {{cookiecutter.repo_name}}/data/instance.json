@@ -1,21 +1,21 @@
-{
-  "capacity": 15,
-  "items": [
-    {
-      "weight": 9,
-      "value": 150
-    },
-    {
-      "weight": 13,
-      "value": 35
-    },
-    {
-      "weight": 3,
-      "value": 200
-    },
-    {
-      "weight": 2,
-      "value": 160
-    }
-  ]
-}
+// {
+//   "capacity": 15,
+//   "items": [
+//     {
+//       "weight": 9,
+//       "value": 150
+//     },
+//     {
+//       "weight": 13,
+//       "value": 35
+//     },
+//     {
+//       "weight": 3,
+//       "value": 200
+//     },
+//     {
+//       "weight": 2,
+//       "value": 160
+//     }
+//   ]
+// }

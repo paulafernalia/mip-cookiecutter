@@ -4,9 +4,11 @@ from typing import Dict, Sequence, Tuple
 from highspy import Highs
 
 from {{cookiecutter.package_name}}.data.models import ModelData
-from {{cookiecutter.package_name}}.optimization.constraints import BaseConstraintBuilder, KnapsackConstraint
+from {{cookiecutter.package_name}}.optimization.constraints import BaseConstraintBuilder
+# from {{cookiecutter.package_name}}.optimization.constraints import KnapsackConstraint
 from {{cookiecutter.package_name}}.optimization.types import VariableDict
-from {{cookiecutter.package_name}}.optimization.variables import BaseVariableBuilder, AssignmentVariable
+from {{cookiecutter.package_name}}.optimization.variables import BaseVariableBuilder
+# from {{cookiecutter.package_name}}.optimization.variables import AssignmentVariable
 
 logger = logging.getLogger(__name__)
 
@@ -52,7 +54,7 @@ class ModelBuilder:
             model variables (e.g., assignment variables).
         """
         return [
-            AssignmentVariable()
+            # AssignmentVariable()
         ]
 
     def _constraint_collection(self) -> Sequence[BaseConstraintBuilder]:
@@ -65,7 +67,7 @@ class ModelBuilder:
             model constraints (e.g., capacity constraints).
         """
         return [
-            KnapsackConstraint()
+            # KnapsackConstraint()
         ]
 
     def _add_variables(self) -> None:
